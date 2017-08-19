@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 import com.yavuzoktay.deprem.MainActivity;
 import com.yavuzoktay.deprem.OnemliDepremler;
 import com.yavuzoktay.deprem.R;

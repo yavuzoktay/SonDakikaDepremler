@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.yavuzoktay.deprem.OnemliDepremler;
@@ -27,6 +28,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         public TextView tarih;
         public TextView derinlik;
         public CardView cardView ;
+        FrameLayout frameLayout ;
 
 
         public ViewHolder(View itemView) {
@@ -36,6 +38,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
             yer=itemView.findViewById(R.id.text_yer);
             tarih=itemView.findViewById(R.id.text_tarih);
             derinlik=itemView.findViewById(R.id.text_derinlik);
+            frameLayout=itemView.findViewById(R.id.frame_layout);
         }
     }
     List<Datum> onemliDepremler;
@@ -58,9 +61,11 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
         holder.yer.setText(onemliDepremler.get(position).lokasyon);
         holder.derinlik.setText("Hasarlı Bina  :"+onemliDepremler.get(position).hasarlibina);
 
-        Float a=Float.parseFloat(onemliDepremler.get(position).siddeti);
-        if(a>6){
-            holder.buyukluk.setBackgroundColor(Color.RED);
+        if(Float.parseFloat(onemliDepremler.get(position).siddeti)>6){
+            holder.frameLayout.setBackgroundColor(Color.RED);
+        }
+        else{
+            holder.frameLayout.setBackgroundColor(Color.YELLOW);
         }
 
 

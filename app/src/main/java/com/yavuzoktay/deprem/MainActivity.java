@@ -11,6 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.yavuzoktay.deprem.fragments.FragmentA;
 import com.yavuzoktay.deprem.fragments.FragmentB;
 import com.yavuzoktay.deprem.fragments.FragmentC;
@@ -24,18 +26,26 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private FragmentB fragmentB = new FragmentB();
     private FragmentC fragmentC = new FragmentC();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         setTitle("Depremler");
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.addOnPageChangeListener(this);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
 
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

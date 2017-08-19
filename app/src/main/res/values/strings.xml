@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Deprem</string>
+    <string name="app_name">Son Dakika Depremler</string>
     <string name="title_deprem">Depremler</string>
     <string name="title_buyukDeprem">Büyük Depremler</string>
     <string name="title_onemliDeprem">Önemli Depremler</string>

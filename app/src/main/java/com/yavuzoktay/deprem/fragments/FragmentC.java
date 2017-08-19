@@ -48,10 +48,6 @@ public class FragmentC extends  Fragment{
         onemliDepremler=new ArrayList<OnemliDepremler>();
 
 
-
-
-
-
         Factory.getInstance().onemliDepremModel().enqueue(new Callback<OnemliDepremModel>() {
             @Override
             public void onResponse(Call<OnemliDepremModel> call, Response<OnemliDepremModel> response) {

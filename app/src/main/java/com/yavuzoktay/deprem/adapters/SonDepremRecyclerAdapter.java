@@ -67,9 +67,7 @@ public class SonDepremRecyclerAdapter extends RecyclerView.Adapter<SonDepremRecy
         holder.tarih.setText("Tarih  :"+onemliDepremler.get(position).tarih2);
         holder.yer.setText(onemliDepremler.get(position).lokasyon);
 
-        if(Float.parseFloat(onemliDepremler.get(position).siddeti)>5){
-            holder.buyukluk.setBackgroundColor(Color.RED);
-        }
+
 
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {

@@ -60,6 +60,9 @@ public class BuyukRecyclerAdapter extends RecyclerView.Adapter<BuyukRecyclerAdap
         if(Float.parseFloat(onemliDepremler.get(position).siddeti)>7){
             holder.frameLayout.setBackgroundColor(Color.RED);
         }
+        else{
+            holder.frameLayout.setBackgroundColor(Color.YELLOW);
+        }
 
 
     }
